@@ -1,6 +1,6 @@
 import {
   word
-} from './message.js';
+} from './word.js';
 
 const message = `say ${word}`;
 
