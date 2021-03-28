@@ -55,8 +55,28 @@ const makeDependenciesGraph = (entry) => {
   return gragh;
 }
 
-const graphInfo = makeDependenciesGraph('./src/index.js');
-console.log(graphInfo);
+const generateCode = (entry) => {
+  // console.log(makeDependenciesGraph(entry));
+  const graph = JSON.stringify(makeDependenciesGraph(entry));
+  return `
+    (function(grap){
+      function require(module){
+        function localRequire(relativePath){
+          return require(graph[module].dependentcies[relativePath]);
+        }
+        var exports = {};
+        (function(require, exports, code){
+          eval(code)
+        })(localRequire, exports, graph[module].code);
+        return exports;
+      };
+      require('${entry}')
+    })(${graph})
+  `;
+}
+
+const code = generateCode('./src/index.js');
+console.log(code);
 
 // 大致步骤：
 // 1、分析入口文件，函数moduleAnalyser
