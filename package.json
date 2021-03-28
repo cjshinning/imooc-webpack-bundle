@@ -1,0 +1,25 @@
+{
+  "name": "imooc-webpack-bundle",
+  "version": "1.0.0",
+  "description": "learning webpack",
+  "main": "bundler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cjshinning/imooc-webpack-bundle.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cjshinning/imooc-webpack-bundle/issues"
+  },
+  "homepage": "https://github.com/cjshinning/imooc-webpack-bundle#readme",
+  "dependencies": {
+    "@babel/core": "^7.13.13",
+    "@babel/parser": "^7.13.13",
+    "@babel/preset-env": "^7.13.12",
+    "@babel/traverse": "^7.13.13"
+  }
+}
